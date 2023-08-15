@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="setContent(content)">   
+<head>
+
+   <title>땡처리닷컴</title>
+
+   <meta charset="UTF-8" />
+   <meta charset="EUC-KR" />
+
+   <!--공통 -->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/index1.css}" />
+<!--   <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}" />
+   <!--<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+   -->
+   
+   <link rel="stylesheet" type="text/css" th:href="@{/css/reserv_check.css}" />
+   <link rel="stylesheet" type="text/css" th:href="@{/css/reserv_result.css}" />
+   
+   <link rel="stylesheet" type="text/css" th:href="@{/css/loading.css}" />  
+   <link rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.min.css}" />
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+   
+   <script th:src="@{/js/jquery-1.12.1.min.js}"></script>
+   <script th:src="@{/js/jquery-ui.min.js}"></script>
+   <script th:src="@{/js/style.js}"></script>
+
+   <!--모달css-->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/modal.css}" />
+
+
+</head>
+<body>
+
+  
+  <div class="wrap">
+
+    <div class="chkBox">
+
+      <div class="checktitle"><!-- 확인 title -->
+        <span>나의 여행</span>
+      </div>
+
+
+      <div><!-- 예약내역박스 -->
+
+        <div class="chkselbox"> <!-- 예약내역 선택 js-->
+
+          <div class="chk_cate">
+            <ul>
+              <li>
+     
+                  <span>국내항공 예약내역</span>     
+              </li>
+              
+            </ul>
+          </div>
+
+        </div> 
+
+        <div class="reserv_info"> <!-- 설명 -->
+			<div class="reserv_title2" style="color: dimgrey; font-weight: bold; font-size: 15px;">
+               <span>※ 예약내역이 확인되지 않는 경우, 고객센터로 문의주시기 바랍니다.</span>
+            </div>
+        </div>
+
+        <div class="reserv_box">
+          <div class="reserv_title" style="color: navy; font-weight: bold; font-size: 20px;">
+            <span>국내항공 예약내역</span>
+          </div>
+
+          <div>
+            <!-- 인원 및 요금정보 -->
+          </div>
+        </div>
+        
+        <div class="reserv_list"> <!--  -->
+          <div>
+            <ul>
+				
+				<table cellpadding="0" cellspacing="0" class="col_14" width="100%;">
+                     <tr>
+                        <th><strong style="font-size: medium;"></strong></th>
+                        <th><strong style="font-size: medium;">항공사</strong></th>
+                        <th><strong style="font-size: medium;">항공편</strong></th>
+                        <th><strong style="font-size: medium;">출발공항</strong></th>
+                        <th><strong style="font-size: medium;">도착공항</strong></th>
+                        <th><strong style="font-size: medium;">출발시간</strong></th>
+                        <th><strong style="font-size: medium;">도착시간</strong></th>
+                        <th><strong style="font-size: medium;">운항일</strong></th>
+                        <th><strong style="font-size: medium;">총 요금(편도)</strong></th>
+                     </tr>
+                     <tr>
+                        <td><strong style="color: black; font-size: medium;">1</strong></td>
+                        <td><strong style="color: lightseagreen; font-size: medium;">아시아나</strong></td>
+                        <td><strong style="color: black; font-size: medium;">OZ8998</strong></td>
+                        <td><strong style="color: lightseagreen; font-size: medium;">김포</strong></td>
+                        <td><strong style="color: lightseagreen; font-size: medium;">제주</strong></td>
+                        <td><strong style="color: black; font-size: medium;">21:10</strong></td>
+                        <td><strong style="color: black; font-size: medium;">22:20</strong></td>
+                        <td><strong style="color: black; font-size: medium;">2023-03-27</strong></td>
+                        <td><strong style="color: lightseagreen; font-size: medium;">65000원</strong></td>
+                     </tr>
+
+
+
+
+                  </table>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+                                
+                             
+      <div class="check">
+         <span>
+            <button type="button" class="checkBtn" style="float: right; font-size: 16px; margin-right: 1.5cm; margin-left: 650px ;"
+               onclick="goToReservCheck()">확인</button>
+         </span>
+      </div>
+
+      <script>
+         function goToReservCheck() {
+            window.location.href = "/air/"; // 원하는 경로로 변경
+         }
+      </script>
+      <!-- 확인버튼 : 홈으로 이동 -->
+      
+      
+  </div> <!-- wrap end -->
+
+
+</th:block>
+
+<script>
+      
+    $(document).ready(function(){
+      $(".menuBtn").click(function(){
+        $(".sideBox").toggleClass("open");
+        $(".closeBtn").toggleClass("hidden");
+      });
+
+      $(".closeBtn").click( function() {
+        $(".sideBox").removeClass("open");
+        $(this).addClass("hidden");
+      });
+    });
+
+</script>
+  
+</html>
